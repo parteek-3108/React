@@ -20,6 +20,8 @@ class TemperaturesForToday extends React.Component {
                                 return (
                                     <div className="col-md-auto col-lg-auto col-sm-auto col-xl-auto mb-1 text-white">
                                         <p className="mb-1"> {Timing[index]} </p>
+                                        <p ><i class="fas fa-cloud-moon"></i></p>
+                                        <p><i class="fas fa-sun"></i></p>
                                         <p className="mb-1"> {Temp[index]} </p>
                                         <p> {Wind[index]} </p>
                                     </div>
