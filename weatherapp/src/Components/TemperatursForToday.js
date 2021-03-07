@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
+import TextSymTitle from './TextSymTitle';
 class TemperaturesForToday extends React.Component {
     constructor( props ) {
         super( props );
@@ -14,18 +14,11 @@ class TemperaturesForToday extends React.Component {
         const { Timing, Temp, Wind } = this.state;
         return (
             <>
-                <div className="row d-flex justify-content-around overflow-auto">
+                <div className="d-flex justify-content-around overflow-auto">
                     {
                         Timing.map( (val, index) => {
                                 return (
-                                    <div className="col-md-auto col-lg-auto col-sm-auto col-xl-auto mb-1 text-white">
-                                        <p className="mb-1"> {Timing[index]} </p>
-                                        <p ><i class="fas fa-cloud-moon"></i></p>
-                                        <p><i class="fas fa-sun"></i></p>
-                                        <p className="mb-1"> {Temp[index]} </p>
-                                        <p> {Wind[index]} </p>
-                                    </div>
-                                    
+                                    <TextSymTitle Timing = {Timing[index]} icon = "fas fa-cloud-moon" Temp = { Temp[index] } Wind = { Wind[index] } />    
                                 )
                         })
                     };

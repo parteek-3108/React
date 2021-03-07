@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import "./MoreDetails.css";
+import TextOnlyTitle from "./TextOnlyTitle"
 class MoreDetails extends React.Component {
     constructor( props ) {
         super( props );
@@ -21,20 +22,20 @@ class MoreDetails extends React.Component {
             <>
                 <div className = "jumbotron container mb-4 text-white bg-lightgrey w-70 mb-5 py-5">
                     <div className = " Details-1 d-flex justify-content-around ">
-                        <div className = " Sunrise-Time" ><p>Sunrise Time</p>  <p>{SunriseTime} </p> </div>
-                        <div className = " SunSet-Time"> <p>SunsetTime</p>  <p>{SunsetTime} </p> </div>
+                        <TextOnlyTitle title = "SunriseTime" Condition = {SunriseTime} /> 
+                        <TextOnlyTitle title = "SunsetTime" Condition = {SunsetTime} />
                     </div>
                     <div className = " Details-2 d-flex justify-content-around ">
-                        <div className = " Real-Feel" ><p>Realfeel</p>  <p> {Realfeel}</p> </div>
-                        <div className = " Humidity"><p>Humidity</p>  <p> {Humidity} </p> </div>
+                        <TextOnlyTitle title = "Real Feel" Condition = {Realfeel} />
+                        <TextOnlyTitle title = "Humidity" Condition = {Humidity} />
                     </div>
                     <div className = " Details-3 d-flex justify-content-around ">
-                        <div className = " ChanceOfRain" ><p>ChanceOfRain</p>  <p> {ChanceOfRain} </p> </div>
-                        <div className = " Pressure"><p>Pressure</p>  <p> {Pressure} </p> </div>
+                        <TextOnlyTitle title = "ChanceOfRain" Condition = {ChanceOfRain} />
+                        <TextOnlyTitle title = "Pressure" Condition = {Pressure} />
                     </div>
                     <div className = " Details-4 d-flex justify-content-around ">
-                        <div className = " WindSpeed" ><p>WindSpeed</p>  <p> {WindSpeed} </p> </div>
-                        <div className = " UVIndex"><p>UVIndex</p>  <p> {UVIndex} </p> </div>
+                        <TextOnlyTitle title = "WindSpeed" Condition = {WindSpeed} />
+                        <TextOnlyTitle title = "UVIndex" Condition = {UVIndex} />
                     </div>
                 </div>
             </>

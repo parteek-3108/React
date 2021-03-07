@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
+import MultiCond from "./MultiCond";
 class Navigator extends React.Component {
     constructor( props ) {
         super( props );
@@ -24,17 +24,14 @@ class Navigator extends React.Component {
                 <div className=" d-flex justify-content-around overflow-auto mb-4 text-white">
 
                         <div className = " Today-nav row d-flex justify-content-between ">
-                            <div className="col"> <p className = " display-5 ">Today : {TodayCond} </p> </div>
-                            <div className="col"> <p className = " display-5 "> { TodayDayTemp } / {TodayNightTemp} </p> </div>
+                            <MultiCond title = "Today" Condition = {TodayCond} DayTemp = {TodayDayTemp} NightTemp = {TodayNightTemp} />
                         </div>
 
                         <div className = " Tommorow-nav row d-flex justify-content-between ">
-                            <div className="col"> <p className = " display-5 "> Tommorow : {TommorowCond} </p> </div>
-                            <div className="col"> <p className = " display-5 "> { TommorowDayTemp } / {TommorowNightTemp} </p> </div>
+                            <MultiCond title = "Tommorow" Condition = {TommorowCond} DayTemp = {TommorowDayTemp} NightTemp = {TommorowNightTemp} />
                         </div>   
                         <div className = " DayAfterTommorow-nav row d-flex justify-content-between ">
-                            <div className="col"> <p className = " display-5 "> NextDay : {DayAfterTommorowCond} </p> </div>
-                            <div className="col"> <p className = " display-5 "> { DayAfterTommorowDayTemp } / {DayAfterTommorowNightTemp} </p> </div>
+                            <MultiCond title = "Today" Condition = {DayAfterTommorowCond} DayTemp = {DayAfterTommorowDayTemp} NightTemp = {DayAfterTommorowNightTemp} />
                         </div>
                 </div>
             </>
