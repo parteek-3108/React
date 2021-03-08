@@ -5,37 +5,32 @@ import TextOnlyTitle from "./TextOnlyTitle"
 class MoreDetails extends React.Component {
     constructor( props ) {
         super( props );
-        this.state = {
-           SunriseTime : "05:45 AM",
-           SunsetTime : "06:22 AM",
-           Realfeel : "19.5°C",
-           Humidity : "35%",
-           ChanceOfRain : "3%",
-           Pressure : "1010.101 mbar",
-           WindSpeed : "8.45 Km/h",
-           UVIndex : "0.2"
-        }
+    }
+    get = (time) => {
+        var date = new Date(time * 1000);
+        var hours = date.getHours();
+        var minutes = "0" + date.getMinutes();
+        return (hours + ":" + minutes);
     }
     render( ) {
-        const { SunriseTime, SunsetTime, Realfeel, Humidity, ChanceOfRain, Pressure, WindSpeed, UVIndex } = this.state;
         return (
             <>
                 <div className = "jumbotron container mb-4 text-white bg-lightgrey w-70 mb-5 py-5">
                     <div className = " Details-1 d-flex justify-content-around ">
-                        <TextOnlyTitle title = "SunriseTime" Condition = {SunriseTime} /> 
-                        <TextOnlyTitle title = "SunsetTime" Condition = {SunsetTime} />
+                        <TextOnlyTitle title = "SunriseTime" Condition = {this.get(this.props.SunriseTime)} /> 
+                        <TextOnlyTitle title = "SunsetTime" Condition = {this.get(this.props.SunsetTime)} />
                     </div>
                     <div className = " Details-2 d-flex justify-content-around ">
-                        <TextOnlyTitle title = "Real Feel" Condition = {Realfeel} />
-                        <TextOnlyTitle title = "Humidity" Condition = {Humidity} />
+                        <TextOnlyTitle title = "Real Feel" Condition = {this.props.Realfeel} />
+                        <TextOnlyTitle title = "Humidity" Condition = {this.props.Humidity} />
                     </div>
                     <div className = " Details-3 d-flex justify-content-around ">
-                        <TextOnlyTitle title = "ChanceOfRain" Condition = {ChanceOfRain} />
-                        <TextOnlyTitle title = "Pressure" Condition = {Pressure} />
+                        <TextOnlyTitle title = "ChanceOfRain" Condition = {this.props.ChanceOfRain} />
+                        <TextOnlyTitle title = "Pressure" Condition = {this.props.Pressure} />
                     </div>
                     <div className = " Details-4 d-flex justify-content-around ">
-                        <TextOnlyTitle title = "WindSpeed" Condition = {WindSpeed} />
-                        <TextOnlyTitle title = "UVIndex" Condition = {UVIndex} />
+                        <TextOnlyTitle title = "WindSpeed" Condition = {this.props.WindSpeed} />
+                        <TextOnlyTitle title = "UVIndex" Condition = {this.props.UVIndex} />
                     </div>
                 </div>
             </>
